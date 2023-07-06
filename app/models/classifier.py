@@ -78,33 +78,3 @@ def classify_frames(frames):
     }
 
     return {"summary": summary, "detailed_results": results}
-
-
-
-'''
-def classify_frames(frames):
-    predictions = []
-    for frame in frames:
-        # Обнаруживаем лицо на кадре
-        faces = detect_faces(frame)
-        
-        # Если на кадре нет лиц, пропустим его
-        if not faces:
-            continue
-        
-        # Выбираем первое обнаруженное лицо (!!!!!)
-        face = faces[0]
-        
-        # Преобразуем кадр с лицом в тензор
-        tensor = transform(Image.fromarray(face)).unsqueeze(0)
-        
-        # Классифицируем кадр
-        with torch.no_grad():
-            output = model(tensor)
-            _, predicted = torch.max(output, 1)
-        
-        # Добавляем предсказание в список
-        predictions.append(classes[predicted.item()])
-    
-    return predictions
-'''

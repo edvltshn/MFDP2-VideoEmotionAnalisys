@@ -24,7 +24,7 @@ Docker
 ### Клонирование репозитория
 
 ```bash
-git clone https://github.com/edvltshn/mfdp.git
+git clone https://github.com/edvltshn/MFDP2-VideoEmotionAnalisys.git
 cd mfdp/app
 ```
 

@@ -28,11 +28,18 @@ git clone https://github.com/edvltshn/mfdp.git
 cd mfdp/app
 ```
 
-### Сборка Docker образов и запуск контейнеров с помощью Docker Compose
+### Сборка Docker образа и запуск контейнеров с FastAPI и Streamlit
 ```bash
-docker-compose up --build
+# сборка docker image
+docker build -t mfdp2:latest .
+
+# запуск контейнера с FastAPI сервером в фоновом режиме:
+docker run --gpus all -d --rm -v $PWD:/app -p 8000:8000 mfdp2:1.1 uvicorn main:app --host 0.0.0.0 --port 8000
+
+# запуск контейнера с фронтендом на Streamlit в фоновом режиме:
+docker run -d --rm -v $PWD:/app -p 8501:8501 mfdp2:1.1 streamlit run app.py
 ```
 
-После выполнения команды `docker-compose up --build`, сервисы будут доступны на следующих портах:  
+После выполнения команд, сервисы будут доступны на следующих портах:  
 FastAPI сервер будет доступен на http://localhost:8000  
 Streamlit фронтенд будет доступен на http://localhost:8501  

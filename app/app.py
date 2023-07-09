@@ -11,7 +11,7 @@ st.title('My First Data Project 2')
 st.title('Анализ эмоций на видео')
 
 # Адрес сервера для обработки видео
-url = 'http://localhost:8000/classify'
+url = 'http://host.docker.internal:8000/classify'
 
 # Вводимый пользователем файл
 uploaded_file = st.file_uploader("Загрузите видео урока", type=['mp4'])

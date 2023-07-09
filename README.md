@@ -34,10 +34,10 @@ cd mfdp/app
 docker build -t mfdp2:latest .
 
 # запуск контейнера с FastAPI сервером в фоновом режиме:
-docker run --gpus all -d --rm -v $PWD:/app -p 8000:8000 mfdp2:1.1 uvicorn main:app --host 0.0.0.0 --port 8000
+docker run --gpus all -d --rm -v $PWD:/app -p 8000:8000 mfdp2:latest uvicorn main:app --host 0.0.0.0 --port 8000
 
 # запуск контейнера с фронтендом на Streamlit в фоновом режиме:
-docker run -d --rm -v $PWD:/app -p 8501:8501 mfdp2:1.1 streamlit run app.py
+docker run -d --rm -v $PWD:/app -p 8501:8501 mfdp2:latest streamlit run app.py
 ```
 
 После выполнения команд, сервисы будут доступны на следующих портах:  

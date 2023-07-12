@@ -35,16 +35,6 @@ if uploaded_file is not None:
             for emotion, count in summary['emotion_statistics'].items():
                 st.write(f'{emotion}: {count}')
 
-            with st.expander("Показать детальные результаты"):
-                detailed_results = results['detailed_results']
-                for result in detailed_results:
-                    st.write(f'Кадр {result["frame"]}:')
-                    st.write(f'Обнаруженные лица: {result["faces_detected"]}')
-                    st.write(f'Доминирующая эмоция: {result["emotion"]}')
-                    st.write('Вероятности эмоций:')
-                    for emotion, prob in result['emotion_probabilities'].items():
-                        st.write(f'{emotion}: {prob}')
-
         else:
             st.write('Произошла ошибка при обработке видео.')
             st.write(response.text)

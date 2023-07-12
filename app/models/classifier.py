@@ -12,7 +12,7 @@ from utils.face_detector import detect_faces
 model = EfficientNet.from_name('efficientnet-b7')  # Создаем модель
 num_ftrs = model._fc.in_features  # Получаем количество входных признаков в последний слой
 model._fc = torch.nn.Linear(num_ftrs, 7)  # Заменяем последний слой на новый, имеющий нужное количество выходов
-model.load_state_dict(torch.load('models/model_efficientnet_b7.pth'))  # Загружаем веса модели
+model.load_state_dict(torch.load('models/EffNetB7_finetuned.pth'))  # Загружаем веса модели
 model.eval()  # Переводим модель в режим оценки
 
 

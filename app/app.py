@@ -30,7 +30,7 @@ if uploaded_file is not None:
 
             summary = results['summary']
             st.write(f'Количество кадров: {summary["frame_count"]}')
-            st.write(f'Количество обнаруженных лиц: {summary["face_detected_count"]}')
+            st.write(f'Количество обнаруженных кадров с лицами: {summary["face_detected_count"]}')
             st.write('Статистика эмоций:')
             for emotion, count in summary['emotion_statistics'].items():
                 st.write(f'{emotion}: {count}')
